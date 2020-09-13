@@ -2,6 +2,7 @@ var searchInput = document.querySelector("#search-input")
 var findCity = document.querySelector("#search-btn")
 var listItemE1 = document.querySelector(".list-group")
 var cityCard = document.querySelector("#city-container")
+var saveCity = JSON.parse(localStorage.getItem(".list-group")) || [];
 
 
 $(document).ready(function () {
@@ -35,15 +36,20 @@ $(document).ready(function () {
         // get value from input element
         var searchInput = document.querySelector("#search-input")
         var city = searchInput.value.trim();
+        saveCity[saveCity.length] = city;
         console.log(city)
         clickCity(city);
-        cityHistory(city);            
-        
+        cityHistory(city);
+
+
         searchInput.value = "";
+        localStorage.setItem(".list-group", JSON.stringify(saveCity));
         var capitalizeList = document.querySelector(".list-group-item");
         console.log(capitalizeList)
         capitalizeList.classList.add("capitalize");
     }
+
+  
 
 
     var displayWeather = function (data, city, uvData) {
@@ -157,7 +163,7 @@ $(document).ready(function () {
         historyList.textContent = showCity + "";
         historyList.setAttribute("style", "cursor:pointer")
         cityCard.prepend(historyList)
-        
+
     }
 
 
