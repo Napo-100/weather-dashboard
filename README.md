@@ -9,4 +9,4 @@ Click <a href ="https://napo-100.github.io/weather-dashboard/">here</a> to take 
 
 ### Built with Visual Studio Code
 Languages: HTML, CSS, JavaScript
-Made with OpenWeather API
+### OpenWeather API
