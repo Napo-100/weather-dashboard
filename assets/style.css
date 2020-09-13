@@ -1,9 +1,35 @@
-.navbar {
-    color: white;
-    justify-content: center;
+﻿.head {
+    color: red;
+    font-size: 24px;
 }
 
-#button-addon2 {
-    background-color: #007BFF;
+h1 {
     color: white;
+    align-content: center;
+}
+
+.city {
+    color: black;
+}
+
+.btn {
+    background-color: rgb(8, 153, 243);
+}
+
+.list-group-item {
+    color: black;
+}
+
+#city {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.card-deck {
+    color: white;
+    font-weight: bold;
+}
+
+.hide {
+    display: none;
 }
