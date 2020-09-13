@@ -27,3 +27,60 @@ var getWeatherInfo = function(city) {
 
 
 
+var searchHandler = function(event) {
+    event.preventDefault();
+    // get value from input element
+    var searchInput = document.querySelector("#search-input")
+    var city = searchInput.value.trim();
+    console.log(city)
+    clickCity(city);
+    cityHistory(city);
+    getWeatherInfo(city);
+    searchInput.value = "";
+}
+
+
+
+
+
+var clickCity = function(city) {
+
+    if (city) {
+        getWeatherInfo(city);
+        searchInput.value = "";
+    } else {
+        alert("Please select a City") 
+        //to stop from creating empty card if no city is entered
+        cityCard.prepend(historyList)
+    }
+    
+}
+
+var cityHistory = function(showCity) {
+
+
+    // create list item for each city
+    var historyList = document.createElement("li")
+    historyList.classList = "list-group-item"
+    historyList.textContent = showCity + "";
+    historyList.setAttribute("style", "cursor:pointer")
+    cityCard.prepend(historyList)
+    
+}
+
+
+
+
+
+findCity.addEventListener("click", searchHandler);
+//Enter key while in search box will activate search
+searchInput.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        searchHandler(event)
+    }
+    
+});
+listItemE1.addEventListener("click", function(e) {
+    clickCity(e.target.innerText)
+})
+})

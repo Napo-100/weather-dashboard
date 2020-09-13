@@ -33,3 +33,15 @@ h1 {
 .hide {
     display: none;
 }
+
+.severe {
+    background-color: red;
+}
+
+.moderate {
+    background-color: yellow;
+}
+
+.favorable {
+    background-color: green;
+}
