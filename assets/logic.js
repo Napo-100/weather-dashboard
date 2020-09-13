@@ -92,7 +92,7 @@ $(document).ready(function () {
         showWind.classList = "wind"
         showWind.innerHTML = "<h3> Wind Speed: " + currentWind + " MPH <h3>";
 
-        //uv index
+        // uv index
         var uvIndex = document.createElement("h5")
         uvIndex.classList = "uvi"
         uvIndex.innerHTML = "<h3> UV Index: <span id='uvDanger'>" + currentUv + "</span></h3>"
@@ -104,6 +104,7 @@ $(document).ready(function () {
         cityTemp.appendChild(showWind)
         cityTemp.appendChild(uvIndex)
 
+        // uv index color coding
         if (currentUv >= 8.6) {
             $('#uvDanger').addClass('severe')
         } else if (currentUv >= 4 && currentUv < 8.6) {
@@ -129,7 +130,6 @@ $(document).ready(function () {
             cardBody.classList = "card-body"
             var dateDisplay = "<p>" + dayDate + "</p>"
             var iconDisplay = "<img src= 'http://openweathermap.org/img/wn/" + fiveDay.weather[0].icon + "@2x.png' />"
-            console.log(iconDisplay)
             var tempDisplay = "<p> Temp: " + Math.floor(fiveDay.main.temp) + "</p>"
             var humidityDisplay = "<p> Humidity: " + fiveDay.main.humidity + "</p>"
             cardBody.innerHTML = dateDisplay + iconDisplay + tempDisplay + humidityDisplay
@@ -178,9 +178,9 @@ $(document).ready(function () {
     })
 })
 
+    // get data from local storage on page load
 window.addEventListener("load", function() {
     var cityHisList = document.getElementById("city-container")
-    console.log(cityHisList)
     for (i = 0; i < saveCity.length; i++) {
         var cityHis = document.createElement("li");
         
@@ -191,6 +191,5 @@ window.addEventListener("load", function() {
         
     }
 
-    // clears local storage 
     localStorage.clear();
 });

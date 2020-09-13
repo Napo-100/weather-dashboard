@@ -50,3 +50,7 @@ h1 {
 .capitalize {
     text-transform: capitalize;
 }
+
+#weather-today {
+    background-color: lightsteelblue;
+}
