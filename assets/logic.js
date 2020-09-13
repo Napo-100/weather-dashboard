@@ -48,8 +48,20 @@ $(document).ready(function () {
     }
 
     window.addEventListener("load", function() {
-        var list = document.getElementById("city-container")
-        
+        var cityHisList = document.getElementById("city-container")
+        console.log(cityHisList)
+        for (i = 0; i < saveCity.length; i++) {
+            var cityHis = document.createElement("li");
+            
+            cityHis.classList.add("list-group-item");
+            cityHis.classList.add("capitalize");
+            cityHis.innerHTML = saveCity[i];
+            cityHisList.appendChild(cityHis)
+            
+        }
+    
+        // clears local storage 
+        localStorage.clear();
     });
 
 
