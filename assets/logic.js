@@ -47,22 +47,7 @@ $(document).ready(function () {
         capitalizeList.classList.add("capitalize");
     }
 
-    window.addEventListener("load", function() {
-        var cityHisList = document.getElementById("city-container")
-        console.log(cityHisList)
-        for (i = 0; i < saveCity.length; i++) {
-            var cityHis = document.createElement("li");
-            
-            cityHis.classList.add("list-group-item");
-            cityHis.classList.add("capitalize");
-            cityHis.innerHTML = saveCity[i];
-            cityHisList.appendChild(cityHis)
-            
-        }
     
-        // clears local storage 
-        localStorage.clear();
-    });
 
 
     var displayWeather = function (data, city, uvData) {
@@ -192,3 +177,20 @@ $(document).ready(function () {
         clickCity(e.target.innerText)
     })
 })
+
+window.addEventListener("load", function() {
+    var cityHisList = document.getElementById("city-container")
+    console.log(cityHisList)
+    for (i = 0; i < saveCity.length; i++) {
+        var cityHis = document.createElement("li");
+        
+        cityHis.classList.add("list-group-item");
+        cityHis.classList.add("capitalize");
+        cityHis.innerHTML = saveCity[i];
+        cityHisList.appendChild(cityHis)
+        
+    }
+
+    // clears local storage 
+    localStorage.clear();
+});
