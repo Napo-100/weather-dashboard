@@ -18,6 +18,7 @@ h1 {
 
 .list-group-item {
     color: black;
+    cursor:pointer
 }
 
 #city {
