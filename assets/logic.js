@@ -37,11 +37,9 @@ $(document).ready(function () {
         var searchInput = document.querySelector("#search-input")
         var city = searchInput.value.trim();
         saveCity[saveCity.length] = city;
-        console.log(city)
         clickCity(city);
+
         cityHistory(city);
-
-
         searchInput.value = "";
         localStorage.setItem(".list-group", JSON.stringify(saveCity));
         var capitalizeList = document.querySelector(".list-group-item");
@@ -49,7 +47,10 @@ $(document).ready(function () {
         capitalizeList.classList.add("capitalize");
     }
 
-  
+    window.addEventListener("load", function() {
+        var list = document.getElementById("city-container")
+        
+    });
 
 
     var displayWeather = function (data, city, uvData) {
